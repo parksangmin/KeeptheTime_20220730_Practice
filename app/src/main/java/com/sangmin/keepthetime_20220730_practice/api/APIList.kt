@@ -24,6 +24,14 @@ interface APIList {
         @Field ("nick_name") nick : String
     ) : Call<BasicResponse>
 
+//    로그인인
+   @FormUrlEncoded
+    @POST ("/user")
+    fun getRequestLogin(
+        @Field("email") email: String,
+        @Field("password") password: String,
+    ) : Call<BasicResponse>
+
 
 
 }
