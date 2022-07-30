@@ -1,5 +1,6 @@
 package com.sangmin.keepthetime_20220730_practice
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
@@ -17,6 +18,11 @@ class LoginActivity : BaseActivity() {
     }
 
     override fun setupEvents() {
+
+        mBinding.signupBtn.setOnClickListener {
+            val myIntent = Intent(mContext, SignUpActivity::class.java)
+            startActivity(myIntent)
+        }
 
     }
 
