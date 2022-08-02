@@ -7,5 +7,4 @@ data class DataResponse (
     val token : String,
     val friends : ArrayList<FriendData>
 
-        ) {
-}
+        )

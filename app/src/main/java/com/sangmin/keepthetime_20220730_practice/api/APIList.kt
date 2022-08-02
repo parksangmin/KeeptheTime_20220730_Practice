@@ -1,10 +1,10 @@
 package com.sangmin.keepthetime_20220730_practice.api
 
-import android.provider.ContactsContract
+
 import com.sangmin.keepthetime_20220730_practice.datas.BasicResponse
 import retrofit2.Call
 import retrofit2.http.*
-import java.lang.reflect.Type
+
 
 interface APIList {
 
@@ -16,6 +16,7 @@ interface APIList {
         @Query("value") value: String
     ) : Call<BasicResponse>
 
+//    회원가입
     @FormUrlEncoded
     @PUT("/user")
     fun getRequestSignUp (
@@ -29,14 +30,24 @@ interface APIList {
     @POST ("/user")
     fun getRequestLogin(
         @Field("email") email: String,
-        @Field("password") password: String,
+        @Field("password") password: String
     ) : Call<BasicResponse>
 
 
 //    내정보 확인
     @GET("/user")
     fun getRequestMyInfo(
-        @Header("X-Http-Token") token: Unit
+        @Header("X-Http-Token") token: String
+    ) : Call<BasicResponse>
+
+
+//    user//friend
+//    내 친구 목록 불러오기
+
+    @GET("/user/friend")
+    fun getRequestFriendList(
+        @Header("X-Http-Token") token: Unit,
+        @Query("type") type: String
     ) : Call<BasicResponse>
 
 
