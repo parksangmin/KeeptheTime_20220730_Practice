@@ -4,7 +4,8 @@ data class DataResponse (
 
     val code : Int,
     val user : UserData,
-    val token : String
+    val token : String,
+    val friends : ArrayList<FriendData>
 
         ) {
 }
