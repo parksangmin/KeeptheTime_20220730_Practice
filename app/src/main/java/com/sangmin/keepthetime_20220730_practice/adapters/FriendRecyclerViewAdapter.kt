@@ -4,7 +4,10 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.sangmin.keepthetime_20220730_practice.R
 import com.sangmin.keepthetime_20220730_practice.datas.FriendData
 
@@ -18,6 +21,12 @@ class FriendRecyclerViewAdapter(
 
     inner class MyViewHolder(view : View) : RecyclerView.ViewHolder(view){
         fun bind(item : FriendData){
+            val profileImg = itemView.findViewById<ImageView>(R.id.profileImg)
+            val nickTxt = itemView.findViewById<TextView>(R.id.nickTxt)
+
+
+            nickTxt.text = item.nick_name
+            Glide.with(mContext).load(item.profile_img).into(profileImg)
 
         }
     }
