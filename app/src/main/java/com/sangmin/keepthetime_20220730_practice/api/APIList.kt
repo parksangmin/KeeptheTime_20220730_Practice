@@ -33,5 +33,12 @@ interface APIList {
     ) : Call<BasicResponse>
 
 
+//    내정보 확인
+    @GET("/user")
+    fun getRequestMyInfo(
+        @Header("X-Http-Token") token: Unit
+    ) : Call<BasicResponse>
+
+
 
 }

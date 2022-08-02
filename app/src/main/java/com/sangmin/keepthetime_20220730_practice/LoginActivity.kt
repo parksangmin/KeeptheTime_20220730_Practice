@@ -52,6 +52,8 @@ class LoginActivity : BaseActivity() {
                         GlobalData.loginUser = br.data.user
                         ContextUtil.setLoginToken(mContext, br.data.token)
 
+                        ContextUtil.setAutoLogin(mContext, mBinding.autoLoginCb.isChecked)
+
 
                         Toast.makeText(mContext, "${br.data.user.nick_name}님 환영합니다", Toast.LENGTH_SHORT).show()
                         val myIntent = Intent(mContext, MainActivity::class.java)
@@ -73,6 +75,8 @@ class LoginActivity : BaseActivity() {
                 }
             })
         }
+
+
 
     }
 
